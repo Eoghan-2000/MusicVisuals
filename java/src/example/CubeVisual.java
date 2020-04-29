@@ -1,6 +1,6 @@
 package example;
 
-import ie.tudublin.Visual;
+import ie.tudublin.*;
 
 public class CubeVisual extends Visual
 {
@@ -10,7 +10,7 @@ public class CubeVisual extends Visual
     {
         size(800, 800, P3D);
         println("CWD: " + System.getProperty("user.dir"));
-        //fullScreen(P3D, SPAN);
+        // fullScreen(P3D, SPAN);
     }
 
     public void keyPressed()
@@ -36,9 +36,9 @@ public class CubeVisual extends Visual
         setFrameSize(256);
 
         startMinim();
-        loadAudio("heroplanet.mp3");
+        loadAudio("robotsinparis.mp3");
         //getAp().play();
-        //startListening(); 
+        // startListening(); 
         
     }
 

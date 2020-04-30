@@ -5,12 +5,13 @@ import ie.tudublin.*;
 public class firstVisual extends Visual
 {
     boolean twocubes = false;
+    boolean fourcubes = false;
 
     public void settings()
     {
         // size(800, 800, P3D);
         println("CWD: " + System.getProperty("user.dir"));
-        fullScreen(P3D, SPAN);
+        fullScreen(P3D, 2);
     }
 
     public void keyPressed()
@@ -25,6 +26,10 @@ public class firstVisual extends Visual
         {
             twocubes = ! twocubes;
 
+        }
+        else if (key =='2')
+        {
+            fourcubes = ! fourcubes;
         }
     }
 
@@ -76,7 +81,44 @@ public class firstVisual extends Visual
             sphere(smoothedBoxSize);
             popMatrix();
         }
-        else
+        else if(fourcubes)
+        {
+            calculateAverageAmplitude();
+            background(0);
+            fill(map(getSmoothedAmplitude(), 0, 1, 0, 255), 255, 255);
+            lights();
+            stroke(0);
+            camera(0, 0, 0, 0, 0, -1, 0, 1, 0);
+            translate(0, -100, -600);
+            pushMatrix();
+            translate(-200, 300, 0);
+            rotateY(angle);
+            rotateX(angle);
+            sphere(smoothedBoxSize);
+            popMatrix();
+            pushMatrix();
+            translate(200, 0, 0);
+            rotateY(angle);
+            rotateX(angle);
+            strokeWeight(5); 
+            sphere(smoothedBoxSize);
+            popMatrix();
+            pushMatrix();
+            translate(200, 300, 0);
+            rotateY(angle);
+            rotateX(angle);
+            strokeWeight(5); 
+            sphere(smoothedBoxSize);
+            popMatrix();
+            pushMatrix();
+            translate(-200, 0, 0);
+            rotateY(angle);
+            rotateX(angle);
+            strokeWeight(5); 
+            sphere(smoothedBoxSize);
+            popMatrix();
+        }
+        else 
         {
             calculateAverageAmplitude();
             background(0);
@@ -87,14 +129,10 @@ public class firstVisual extends Visual
             translate(0, 0, -300);
             rotateY(angle);
             rotateX(angle);
-            //strokeWeight(1);
-            //sphere(smoothedBoxSize/ 2);            
-            // strokeWeight(5);
             strokeWeight(1);            
-            // box(smoothedBoxSize);
             sphere(smoothedBoxSize);
         }
-        angle += 0.01f;
+        angle += getAmplitude() / 8.0f;;
     }
     float angle = 0;
     }

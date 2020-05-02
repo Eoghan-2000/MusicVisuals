@@ -101,7 +101,15 @@ int lastFrame = 0;
                 
                 rotateY(rot);
             }
-            translate(300,-300);
+            translate(300,0);
+            for(int i = 0 ; i < bands.length ; i ++)
+            {
+                stroke(map(i, 0, bands.length, 0, 255), 255, 255);
+                float h = bands[i];
+                box(h, h, h);
+                rotateY(rot);
+            }
+            translate(0,-300);
             for(int i = 0 ; i < bands.length ; i ++)
             {
                 stroke(map(i, 0, bands.length, 0, 255), 255, 255);
@@ -118,6 +126,7 @@ int lastFrame = 0;
                 
                 rotateY(rot);
             }
+
         }
             
     

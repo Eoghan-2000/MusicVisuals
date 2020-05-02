@@ -4,6 +4,7 @@ import ie.tudublin.*;
 
 public class secondVisual extends Visual
 {
+    boolean seperate = false;
  
 int lastFrame = 0;
  
@@ -20,6 +21,10 @@ int lastFrame = 0;
             getAudioPlayer().cue(0);
             getAudioPlayer().play();
             
+        }
+        if(key == '1')
+        {
+           seperate = !seperate;
         }
  
     }
@@ -64,23 +69,57 @@ int lastFrame = 0;
             // translate(0, 0, -250);
     
             rot = rot + 0.01f;
+            // translate(10,-50,50);
+            if(!seperate)
+            {
             float[] bands = getSmoothedBands();
             for(int i = 0 ; i < bands.length ; i ++)
             {
                 stroke(map(i, 0, bands.length, 0, 255), 255, 255);
                 float h = bands[i];
                 box(h, h, h);
-                translate(50,-50,50);
+                
                 rotateY(rot);
-                // rotateX(rot);
-                // translate(-50,50,-50);
-                // translate(0,-100);
-                // rotate(rot, rot, rot, rot);
-                // translate(h, h);
-                // box(h*2,h*2,h*2);
-                // // translate(-100,-100,0);
-                // box(h,h,h);
             }
+            translate(300,-0);
+            for(int i = 0 ; i < bands.length ; i ++)
+            {
+                stroke(map(i, 0, bands.length, 0, 255), 255, 255);
+                float h = bands[i];
+                box(h, h, h);
+                rotateY(rot);
+            }
+        }
+        else if (seperate)
+        {
+            float[] bands = getSmoothedBands();
+            for(int i = 0 ; i < bands.length ; i ++)
+            {
+                stroke(map(i, 0, bands.length, 0, 255), 255, 255);
+                float h = bands[i];
+                box(h, h, h);
+                
+                rotateY(rot);
+            }
+            translate(300,-300);
+            for(int i = 0 ; i < bands.length ; i ++)
+            {
+                stroke(map(i, 0, bands.length, 0, 255), 255, 255);
+                float h = bands[i];
+                box(h, h, h);
+                rotateY(rot);
+            }
+            translate(0, 600);
+            for(int i = 0 ; i < bands.length ; i ++)
+            {
+                stroke(map(i, 0, bands.length, 0, 255), 255, 255);
+                float h = bands[i];
+                box(h, h, h);
+                
+                rotateY(rot);
+            }
+        }
+            
     
         }
         float angle = 0;

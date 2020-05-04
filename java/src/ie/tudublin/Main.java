@@ -1,6 +1,7 @@
 package ie.tudublin;
 
 import example.*;
+
 import c18342116.*;
 
 public class Main
@@ -30,13 +31,20 @@ public class Main
 		String[] a = {"MAIN"};
 		processing.core.PApplet.runSketch(a, new secondVisual());
 	}
+	public void linesVisual() 
+	{
+		String[] a = {"MAIN"};
+		processing.core.PApplet.runSketch(a, new linesVisual());
+	}
 
 	public static void main(String[] args)
 	{
-		Main main = new Main();
+		 Main main = new Main();
 		// main.startUI();	
-		// main.firstVisual();	
+		// main.firstVisual();
 		// main.MyVisual();	
-		main.secondVisual();
+		// main.secondVisual();
+		main.linesVisual();
+
 	}
 }

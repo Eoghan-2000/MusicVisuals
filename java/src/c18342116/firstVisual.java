@@ -42,9 +42,7 @@ public class firstVisual extends Visual
 
         startMinim();
         loadAudio("robotsinparis.mp3");
-        //getAp().play();
-        // startListening(); 
-        
+
     }
 
     float smoothedBoxSize = 0;
@@ -54,7 +52,7 @@ public class firstVisual extends Visual
         
         float boxSize = 50 + (getAmplitude() * 300);//map(average, 0, 1, 100, 400); 
         smoothedBoxSize = lerp(smoothedBoxSize, boxSize, 0.2f);        
-        if (twocubes)
+        if (twocubes)//if statement for two cubes
         {
             calculateAverageAmplitude();
             background(0);
@@ -67,21 +65,17 @@ public class firstVisual extends Visual
             translate(-100, 0, 0);
             rotateY(angle);
             rotateX(angle);
-            // box(smoothedBoxSize);
             sphere(smoothedBoxSize);
-            //strokeWeight(1);
-            //sphere(smoothedBoxSize);
             popMatrix();
             pushMatrix();
             translate(100, 0, 0);
             rotateY(angle);
             rotateX(angle);
             strokeWeight(5); 
-            // box(smoothedBoxSize);
             sphere(smoothedBoxSize);
             popMatrix();
         }
-        else if(fourcubes)
+        else if(fourcubes)//if statement for four cubes
         {
             calculateAverageAmplitude();
             background(0);
@@ -118,7 +112,7 @@ public class firstVisual extends Visual
             sphere(smoothedBoxSize);
             popMatrix();
         }
-        else 
+        else //one cube 
         {
             calculateAverageAmplitude();
             background(0);

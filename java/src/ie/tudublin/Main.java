@@ -44,6 +44,7 @@ public class Main
 		// main.firstVisual();
 		// main.MyVisual();	
 		// main.secondVisual();
+		// main.firstVisual();
 		main.linesVisual();
 
 	}

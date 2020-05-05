@@ -55,9 +55,9 @@ public class linesVisual extends Visual
 		for(int i = 0 ; i < numSamples ; i ++)
 		{
 			strokeWeight(5);
-			float c = ((i + offs) * cgap) % 255; 
+			float c = map(i,0,numSamples,0,255); 
 			stroke(c, 255, 255);
-			float t = map(i,0,100,0,360);
+			float t = map(i,0,numSamples,0,360);
 			lerpedSamples[i] = lerp(lerpedSamples[i], fft.getBand(i), 0.2f);
 			z1 = radius * cos(t) - width/2;
 			z2 = radius * cos(t) - width/2;

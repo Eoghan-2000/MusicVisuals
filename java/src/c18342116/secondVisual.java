@@ -66,10 +66,8 @@ int lastFrame = 0;
             lights();
             stroke(map(getSmoothedAmplitude(), 0, 1, 0, 255), 255, 255);
             camera(0, -500, 500, 0, 0, 0, 0, 1, 0);
-            // translate(0, 0, -250);
     
             rot = rot + 0.01f;
-            // translate(10,-50,50);
             if(!seperate)
             {
             float[] bands = getSmoothedBands();

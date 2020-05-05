@@ -56,9 +56,9 @@ public class firstVisual extends Visual
         {
             calculateAverageAmplitude();
             background(0);
-            fill(map(getSmoothedAmplitude(), 0, 1, 0, 255), 255, 255);
+            noFill();
             lights();
-            stroke(0);
+            stroke(map(getSmoothedAmplitude(), 0, 1, 0, 255), 255, 255);
             camera(0, 0, 0, 0, 0, -1, 0, 1, 0);
             translate(0, 0, -300);
             pushMatrix();
@@ -67,11 +67,11 @@ public class firstVisual extends Visual
             rotateX(angle);
             sphere(smoothedBoxSize);
             popMatrix();
-            pushMatrix();
+            pushMatrix(); 
             translate(100, 0, 0);
             rotateY(angle);
             rotateX(angle);
-            strokeWeight(5); 
+            strokeWeight(1); 
             sphere(smoothedBoxSize);
             popMatrix();
         }
@@ -79,9 +79,9 @@ public class firstVisual extends Visual
         {
             calculateAverageAmplitude();
             background(0);
-            fill(map(getSmoothedAmplitude(), 0, 1, 0, 255), 255, 255);
+            noFill();
             lights();
-            stroke(0);
+            stroke(map(getSmoothedAmplitude(), 0, 1, 0, 255), 255, 255);
             camera(0, 0, 0, 0, 0, -1, 0, 1, 0);
             translate(0, -100, -600);
             pushMatrix();
@@ -94,21 +94,19 @@ public class firstVisual extends Visual
             translate(200, 0, 0);
             rotateY(angle);
             rotateX(angle);
-            strokeWeight(5); 
+            strokeWeight(1); 
             sphere(smoothedBoxSize);
             popMatrix();
             pushMatrix();
             translate(200, 300, 0);
             rotateY(angle);
             rotateX(angle);
-            strokeWeight(5); 
             sphere(smoothedBoxSize);
             popMatrix();
             pushMatrix();
             translate(-200, 0, 0);
             rotateY(angle);
             rotateX(angle);
-            strokeWeight(5); 
             sphere(smoothedBoxSize);
             popMatrix();
         }
@@ -116,7 +114,7 @@ public class firstVisual extends Visual
         {
             calculateAverageAmplitude();
             background(0);
-            fill(0);
+            noFill();
             lights();
             stroke(map(getSmoothedAmplitude(), 0, 1, 0, 255), 255, 255);
             camera(0, 0, 0, 0, 0, -1, 0, 1, 0);

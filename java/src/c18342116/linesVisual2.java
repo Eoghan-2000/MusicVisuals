@@ -66,19 +66,21 @@ public class linesVisual2 extends Visual {
         }
         for(int i =0 ;i<numSamples; i++)
         {
-            float boxSize = 50 + (lerpedSamples[i]); 
+            pushMatrix();
+            float boxSize = 50 + (lerpedSamples[i]*5); 
             smoothedBoxSize = lerp(smoothedBoxSize, boxSize, 0.2f);       		
             noFill();
-            lights();
             stroke(map(i, 0, numSamples, 0, 255), 255, 255);
-            camera(0, 0, 0, 0, 0, -1, 0, 1, 0);
-            translate(0, 0, -300);
+            translate(width/2, height/2, 0);
             rotateY(angle);
             rotateX(angle);
             strokeWeight(1);            
             box(smoothedBoxSize);
+            popMatrix();
+            
         }
         angle += lerpedSamples[50]/ 100.0f;
+       
     }
 
 }

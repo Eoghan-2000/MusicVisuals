@@ -12,16 +12,11 @@ public class firstVisual extends Visual
         // size(800, 800, P3D);
         println("CWD: " + System.getProperty("user.dir"));
         fullScreen(P3D, 2);
+        
     }
 
     public void keyPressed()
     {
-        if (key == ' ')
-        {
-            getAudioPlayer().cue(0);
-            getAudioPlayer().play();
-            
-        }
         if (key == '1')
         {
             twocubes = ! twocubes;
@@ -37,16 +32,15 @@ public class firstVisual extends Visual
     {
         colorMode(HSB);
         noCursor();
-        
         setFrameSize(256);
-
         startMinim();
         loadAudio("robotsinparis.mp3");
+        getAudioPlayer().cue(0);
+        getAudioPlayer().play();
 
     }
 
     float smoothedBoxSize = 0;
-
     public void draw()
     {
         

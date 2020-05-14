@@ -20,10 +20,6 @@ public class linesVisual extends Visual
 		fullScreen(P3D,2);
     }
     public void keyPressed() {
-		if (key == ' ') {
-			as.stop();
-			as.trigger();
-        }
     }
 
 	
@@ -34,11 +30,11 @@ public class linesVisual extends Visual
         as = minim.loadSample("robotsinparis.mp3", frameSize);
 		background(0);
 		fft = new FFT(frameSize, 44100);
-		
+		as.stop();
+		as.trigger();
 	}
 
 	float cx, cy;
-	float offs = 0;
 	public void draw()
 	{	
         camera(width/2, height/2, (height/2) / tan(PI*30 / 180), width/2, height/2, 0, 0, -1, 0);
@@ -49,8 +45,7 @@ public class linesVisual extends Visual
 		fft.forward(as.left);
  
 		float radius = width/2;
-		float cgap = 255 / numSamples + 1;
-		float average = 0;
+
 		float x1,x2,y1,y2,z1,z2 =0;
 		for(int i = 0 ; i < numSamples ; i ++)
 		{
@@ -66,9 +61,8 @@ public class linesVisual extends Visual
 			y1=0;
 			y2 =lerpedSamples[i] * 100;
 			line(x1, y1,z1,x2,y2,z2);
-			average += lerpedSamples[i];
+
 		}
-		average /= (float) numSamples;
-		offs = average * 2;
+
 	}
 }

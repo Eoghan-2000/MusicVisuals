@@ -4,27 +4,26 @@ import ie.tudublin.*;
 
 public class firstVisual extends Visual
 {
-    boolean twocubes = false;
-    boolean fourcubes = false;
+    //boolean variables for changes in visual
+    boolean twospheres = false;
+    boolean fourspheres = false;
 
     public void settings()
     {
-        // size(800, 800, P3D);
         println("CWD: " + System.getProperty("user.dir"));
         fullScreen(P3D, 2);
-        
     }
 
     public void keyPressed()
     {
-        if (key == '1')
+        if (key == '1')//turns visual into two spheres
         {
-            twocubes = ! twocubes;
+            twospheres = ! twospheres;
 
         }
-        else if (key =='2')
+        else if (key =='2')//turns visual into four spheres
         {
-            fourcubes = ! fourcubes;
+            fourspheres = ! fourspheres;
         }
     }
 
@@ -44,9 +43,9 @@ public class firstVisual extends Visual
     public void draw()
     {
         
-        float boxSize = 50 + (getAmplitude() * 300);//map(average, 0, 1, 100, 400); 
+        float boxSize = 50 + (getAmplitude() * 300);//get box size using amplitude
         smoothedBoxSize = lerp(smoothedBoxSize, boxSize, 0.2f);        
-        if (twocubes)//if statement for two cubes
+        if (twospheres)//if statement for two cubes
         {
             calculateAverageAmplitude();
             background(0);
@@ -69,7 +68,7 @@ public class firstVisual extends Visual
             sphere(smoothedBoxSize);
             popMatrix();
         }
-        else if(fourcubes)//if statement for four cubes
+        else if(fourspheres)//if statement for four cubes
         {
             calculateAverageAmplitude();
             background(0);
@@ -118,7 +117,7 @@ public class firstVisual extends Visual
             strokeWeight(1);            
             sphere(smoothedBoxSize);
         }
-        angle += getAmplitude() / 8.0f;;
+        angle += getAmplitude() / 8.0f;//change in angle of spheres
     }
     float angle = 0;
     }

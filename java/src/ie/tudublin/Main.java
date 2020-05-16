@@ -41,7 +41,11 @@ public class Main
 		String[] a = {"MAIN"};
 		processing.core.PApplet.runSketch(a, new linesVisual2());
 	}
-
+	public void expanding()
+	{
+		String[] a = {"MAIN"};
+		processing.core.PApplet.runSketch(a, new expanding());
+	}
 	public static void main(String[] args)
 	{
 		 Main main = new Main();
@@ -51,7 +55,8 @@ public class Main
 		// main.secondVisual();
 		// main.firstVisual();
 		// main.linesVisual();
-		main.linesVisual2();
+		// main.linesVisual2();
+		main.expanding();
 
 	}
 }

@@ -68,28 +68,34 @@ int lastFrame = 0;
             camera(0, -500, 500, 0, 0, 0, 0, 1, 0);
     
             rot = rot + 0.01f;
-            if(!seperate)
+            if(!seperate)//if the key is not pressed
             {
+            //gets audio bands and puts them into a float array
             float[] bands = getSmoothedBands();
             for(int i = 0 ; i < bands.length ; i ++)
             {
+                //creates a box based on the bands current frequency
                 stroke(map(i, 0, bands.length, 0, 255), 255, 255);
                 float h = bands[i];
                 box(h, h, h);
-                
                 rotateY(rot);
             }
             translate(300,-0);
             for(int i = 0 ; i < bands.length ; i ++)
             {
+                //creates a box based on the current frequency and translates it 300 away from the first box
+                //both boxes will rotate based on the variable rot
                 stroke(map(i, 0, bands.length, 0, 255), 255, 255);
                 float h = bands[i];
                 box(h, h, h);
                 rotateY(rot);
             }
         }
-        else if (seperate)
+        else if (seperate)//if the key is pressed
         {
+            //will create four boxes with boxes within each other based on the same code as before
+            //except this time there will be four boxes, three on the same x and z coordinates as each other but on different y coordinates
+            //the other will be the main or centre cube
             float[] bands = getSmoothedBands();
             for(int i = 0 ; i < bands.length ; i ++)
             {
@@ -126,8 +132,6 @@ int lastFrame = 0;
             }
 
         }
-            
-    
         }
         float angle = 0;
         }

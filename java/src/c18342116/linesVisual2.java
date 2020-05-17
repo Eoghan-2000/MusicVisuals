@@ -25,7 +25,14 @@ public class linesVisual2 extends Visual {
 		as.stop();
 		as.trigger();
     }
-
+    public void keyPressed()
+    {
+        if(key == ' ')
+        {
+            as.stop();
+		    as.trigger();
+        }
+    }
 
     public void settings()
     {

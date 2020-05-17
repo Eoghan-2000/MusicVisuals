@@ -5,11 +5,7 @@ import ddf.minim.*;
 import ddf.minim.analysis.*;
 
 public class expanding extends Visual {
-<<<<<<< HEAD
     ///variables for starting minim and loading the audio.
-=======
-
->>>>>>> 85a378ba6e62e3d76f352ff17c1748623785faf2
     Minim minim;
 	AudioSample as;
     FFT fft;
@@ -29,6 +25,15 @@ public class expanding extends Visual {
 		as.stop();
 		as.trigger();
     }
+    public void keyPressed()
+    {
+        if(key == ' ')
+        {
+            as.stop();
+		    as.trigger();
+        }
+    }
+
 
     public void settings()
     {
@@ -45,7 +50,6 @@ public class expanding extends Visual {
         {
             lerpedSamples[i] = lerp(lerpedSamples[i], fft.getBand(i), 0.5f);
             pushMatrix();
-<<<<<<< HEAD
             //creating box size based on the samples at i
             float boxSize = 50 + (lerpedSamples[i]*100); 
             smoothedBoxSize = lerp(smoothedBoxSize, boxSize, 0.2f);       		
@@ -57,16 +61,6 @@ public class expanding extends Visual {
             //rotates the cube based on the angle variable that increases below the for loop everytime
             rotateY(angle);
             rotateX(angle);
-=======
-            float boxSize = 50 + (lerpedSamples[i]*100); 
-            smoothedBoxSize = lerp(smoothedBoxSize, boxSize, 0.2f);       		
-            noFill();
-            stroke(map(i, 0, numSamples, 0, 255), 255, 255);
-            translate(width/2, height/2, 0);
-            rotateY(angle);
-            rotateX(angle);
-
->>>>>>> 85a378ba6e62e3d76f352ff17c1748623785faf2
             strokeWeight(1);            
             box(smoothedBoxSize);
             popMatrix();

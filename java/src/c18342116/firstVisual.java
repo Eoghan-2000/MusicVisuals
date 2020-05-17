@@ -16,6 +16,12 @@ public class firstVisual extends Visual
 
     public void keyPressed()
     {
+        if (key == ' ')
+        {
+            getAudioPlayer().cue(0);
+            getAudioPlayer().play();
+            
+        }
         if (key == '1')//turns visual into two spheres
         {
             twospheres = ! twospheres;
@@ -42,7 +48,6 @@ public class firstVisual extends Visual
     float smoothedBoxSize = 0;
     public void draw()
     {
-        
         float boxSize = 50 + (getAmplitude() * 300);//get box size using amplitude
         smoothedBoxSize = lerp(smoothedBoxSize, boxSize, 0.2f);        
         if (twospheres)//if statement for two cubes
@@ -50,7 +55,6 @@ public class firstVisual extends Visual
             calculateAverageAmplitude();
             background(0);
             noFill();
-            lights();
             stroke(map(getSmoothedAmplitude(), 0, 1, 0, 255), 255, 255);
             camera(0, 0, 0, 0, 0, -1, 0, 1, 0);
             translate(0, 0, -300);
@@ -73,7 +77,6 @@ public class firstVisual extends Visual
             calculateAverageAmplitude();
             background(0);
             noFill();
-            lights();
             stroke(map(getSmoothedAmplitude(), 0, 1, 0, 255), 255, 255);
             camera(0, 0, 0, 0, 0, -1, 0, 1, 0);
             translate(0, -100, -600);
@@ -108,7 +111,6 @@ public class firstVisual extends Visual
             calculateAverageAmplitude();
             background(0);
             noFill();
-            lights();
             stroke(map(getSmoothedAmplitude(), 0, 1, 0, 255), 255, 255);
             camera(0, 0, 0, 0, 0, -1, 0, 1, 0);
             translate(0, 0, -300);

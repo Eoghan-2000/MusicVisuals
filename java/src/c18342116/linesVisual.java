@@ -18,12 +18,16 @@ public class linesVisual extends Visual
 	public void settings()
 	{
 		fullScreen(P3D,2);
-    }
-    public void keyPressed() {
-    }
-
+	}
 	
-
+	public void keyPressed()
+	{
+		if(key == ' ')
+		{
+			as.stop();
+			as.trigger();
+		}
+	}
 	public void setup() 
 	{
 		minim = new Minim(this);

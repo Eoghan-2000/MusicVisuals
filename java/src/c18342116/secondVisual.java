@@ -5,9 +5,7 @@ import ie.tudublin.*;
 public class secondVisual extends Visual
 {
     boolean seperate = false;
- 
-int lastFrame = 0;
- 
+    
     public void settings()
     {
         println("CWD: " + System.getProperty("user.dir"));
@@ -38,8 +36,6 @@ int lastFrame = 0;
         startMinim();
         loadAudio("robotsinparis.mp3");
         getAudioPlayer().play();
-        //getAp().play();
-        // startListening(); 
         
     }
         float radius = 200;
@@ -63,8 +59,6 @@ int lastFrame = 0;
             background(0);
             noFill();
             stroke(255);
-            lights();
-            stroke(map(getSmoothedAmplitude(), 0, 1, 0, 255), 255, 255);
             camera(0, -500, 500, 0, 0, 0, 0, 1, 0);
     
             rot = rot + 0.01f;
@@ -80,7 +74,7 @@ int lastFrame = 0;
                 box(h, h, h);
                 rotateY(rot);
             }
-            translate(300,-0);
+            translate(300,0);
             for(int i = 0 ; i < bands.length ; i ++)
             {
                 //creates a box based on the current frequency and translates it 300 away from the first box
@@ -132,7 +126,6 @@ int lastFrame = 0;
             }
 
         }
-        }
-        float angle = 0;
-        }
+    }
+}
     

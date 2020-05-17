@@ -48,10 +48,7 @@ public class Main
 	}
 	public static void main(String[] args)
 	{
-		 Main main = new Main();
-		// main.startUI();	
-		// main.firstVisual();
-		// main.MyVisual();	
+		Main main = new Main();
 		// main.secondVisual();
 		// main.firstVisual();
 		// main.linesVisual();

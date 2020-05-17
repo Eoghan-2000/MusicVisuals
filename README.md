@@ -178,4 +178,4 @@ There is a lot of things that I am proud of in this assignment, but I think the 
 
 This is the youtube video with all the visuals:
 
-[![YouTube](http://img.youtube.com/vi/J2kHSSFA4NU/0.jpg)](https://www.youtube.com/watch?v=JWY_o8ROg2w)
+[![YouTube](https://i9.ytimg.com/vi/JWY_o8ROg2w/mq3.jpg?sqp=CJOkhPYF&rs=AOn4CLBxPGvUJ7tLEFuuBTvMyY8wRW2eVQ)](https://www.youtube.com/watch?v=JWY_o8ROg2w)
